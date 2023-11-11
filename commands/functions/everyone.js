@@ -15,9 +15,7 @@ async function everyone(message) {
                 let mentions = [];
 
                 for (let participant of chat.participants) {
-                    const contact = await sofi.getContactById(participant.id._serialized);
-
-                    mentions.push(contact);
+                    mentions.push(participant.id._serialized);
                     text += `@${participant.id.user} `;
                 }
 
